@@ -35,7 +35,7 @@ async function realizarCadastroImunizacao(evento) {
 
   try {
     // Realiza a chamada da API
-    const httpResponse = await fetch("http://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:3000/imunizacao/inserir", {
+    const httpResponse = await fetch("https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:3000/imunizacao/inserir", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(imunizacao),
@@ -118,7 +118,7 @@ async function excluirImunizacao(botao) {
     const id = botao.getAttribute("data-id");
 
     //realiza a chamada da API
-    const response = await fetch(`http://localhost:3000/imunizacao/excluir/${id}`, {
+    const response = await fetch(`https://localhost:3000/imunizacao/excluir/${id}`, {
       method: "DELETE",
     });
 
