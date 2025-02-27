@@ -1,5 +1,5 @@
 // api-base.js
-const BASE_URL = "https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:80";
+const BASE_URL = "http://185.111.156.141:8070:80";
 
 // Funções base para API
 export const apiBase = {
