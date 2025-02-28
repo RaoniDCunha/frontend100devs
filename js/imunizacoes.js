@@ -35,7 +35,7 @@ async function realizarCadastroImunizacao(evento) {
 
   try {
     // Realiza a chamada da API
-    const httpResponse = await fetch("https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/inserir", {
+    const httpResponse = await fetch("http://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/inserir", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(imunizacao),
@@ -118,7 +118,7 @@ async function excluirImunizacao(botao) {
     const id = botao.getAttribute("data-id");
 
     //realiza a chamada da API
-    const response = await fetch(`https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/excluir/${id}`, {
+    const response = await fetch(`http://185.111.156.141:8070/imunizacao/excluir/${id}`, {
       method: "DELETE",
     });
 
@@ -232,7 +232,7 @@ async function carregarDadosImunizacao() {
 
   try {
     // Faz a chamada na API para buscar os dados da imunização
-    const response = await fetch(`https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/consultar/${id}`);
+    const response = await fetch(`http://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/consultar/${id}`);
 
     if (!response.ok) {
       const codigoStatus = determinarCodigoStatus(response);
@@ -288,7 +288,7 @@ async function alterarImunizacao(event) {
 
   try {
     // Realiza a chamada da API para atualizar a imunização
-    const httpResponse = await fetch(`https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/alterar/${id}`, {
+    const httpResponse = await fetch(`http://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/alterar/${id}`, {
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(imunizacao),

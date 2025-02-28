@@ -1,12 +1,12 @@
 // api-base.js
-const BASE_URL = "https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070";
+const BASE_URL = "http://185.111.156.141:8070";
 
 // Funções base para API
 export const apiBase = {
   // [GET] Busca todos os valores
   async listar(endpoint) {
     try {
-      const response = await fetch(`${BASE_URL}/${endpoint}`, { mode: "no-cors" });
+      const response = await fetch(`${BASE_URL}/${endpoint}`, );
       if (!response.ok) {
         throw new Error(`Erro ao listar ${endpoint}: ${response.statusText}`);
       }
@@ -20,7 +20,7 @@ export const apiBase = {
   // GET by id
   async buscarPorId(endpoint, id) {
     try {
-      const response = await fetch(`${BASE_URL}/${endpoint}/${id}`, { mode: "no-cors" });
+      const response = await fetch(`${BASE_URL}/${endpoint}/${id}`, );
       if (!response.ok) {
         throw new Error(`Erro ao buscar ${endpoint}: ${response.statusText}`);
       }
@@ -38,7 +38,6 @@ export const apiBase = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados),
-        mode: "no-cors"
       });
       if (!response.ok) {
         throw new Error(
@@ -59,7 +58,6 @@ export const apiBase = {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados),
-        mode: "no-cors"
       });
       if (!response.ok) {
         throw new Error(
@@ -78,7 +76,7 @@ export const apiBase = {
     try {
       const response = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
         method: "DELETE",
-        mode: "no-cors"
+   
       });
       if (!response.ok) {
         throw new Error(`Erro ao excluir ${endpoint}: ${response.statusText}`);
