@@ -23,4 +23,4 @@ async function loadHtml(part, target) {
 }
 
 // Chamada da função para carregar o menu
-loadHtml("/frontend/componentes/menu.html", "menu");
+loadHtml("/componentes/menu.html", "menu");

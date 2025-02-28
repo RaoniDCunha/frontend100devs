@@ -21,48 +21,53 @@
     />
   </head>
   <body>
-    <div id="menu">
-      <!-- menu.html -->
-      <header class="header_area">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container">
-            <a class="navbar-brand logo_h" href="../index.html">
-              <img src="../img/logo.png" alt="Logo" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../cadastro/vacina.html">Vacinas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../cadastro/paciente.html">Cadastro</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../cadastro/imunizacoes.html">Imunizações</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../cadastro/estatisticas.html">Estatisticas</a>
-                </li>
-              </ul>
-            </div>
+    <header class="header_area">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href="../index.html">
+            <img src="../img/logo.png" alt="Logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastro/vacina.html"
+                  >Vacinas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastro/paciente.html"
+                  >Cadastro</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastro/imunizacoes.html"
+                  >Imunizações</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastro/estatisticas.html"
+                  >Estatisticas</a
+                >
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
-    </div>
+        </div>
+      </nav>
+    </header>
 
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
@@ -208,7 +213,7 @@ async function excluirImunizacao(botao) {
     const id = botao.getAttribute("data-id");
 
     // Realiza a chamada da API para excluir a imunização
-    const response = await fetch(`http://185.111.156.141:8070/imunizacao/excluir/${id}`, {
+    const response = await fetch(`https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/excluir/${id}`, {
       method: "DELETE",
     });
 
@@ -239,7 +244,7 @@ async function excluirImunizacao(botao) {
 async function carregarImunizacoes() {
   try {
     // Faz a chamada na API para buscar as imunizações
-    const response = await fetch("http://185.111.156.141:8070/imunizacao/consultar");
+    const response = await fetch("https://ec2-3-147-64-107.us-east-2.compute.amazonaws.com:8070/imunizacao/consultar");
 
     if (!response.ok) {
       const codigoStatus = determinarCodigoStatus(response);
